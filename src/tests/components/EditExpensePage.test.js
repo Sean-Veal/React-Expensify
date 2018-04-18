@@ -32,3 +32,9 @@ test('should handle onSubmit', () => {
     expect(history.push).toHaveBeenCalledWith('/');
     expect(editExpense).toHaveBeenLastCalledWith(expense.id, expense);
 });
+
+test('should handle onClick', () => {
+    wrapper.find('button').simulate('click');
+    expect(history.push).toHaveBeenCalledWith('/');
+    expect(removeExpense).toHaveBeenLastCalledWith(expense.id);
+});
